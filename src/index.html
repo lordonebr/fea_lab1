@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Gerencie suas finanças</title>
+
+    <script src="js/index.js"></script>
+    <script src="js/canvas.js"></script>
+   
 </head>
 
 <body>
@@ -16,12 +20,46 @@
     </nav>
     <main>
         <section>
-
-
+            <h4>Inserir novo registro</h4>
+            <form id="formRegistro">
+                <label for="valueDate">Data:</label>
+                <input type="date" id="valueDate" name="date" placeholder="Entre com a data" required>
+                <label for="valueInput">Valor:</label>
+                <input type="text" id="valueDescription" name="description" maxlength="30" placeholder="Entre com a descrição">
+                <input type="text" id="valueInput" name="value" maxlength="6" placeholder="Entre com o valor" required>
+                <label for="valueDescription">Descrição:</label>
+                <button type="submit" id='addSubmitBtn'>Inserir</button>
+            </form>
+        </section>
+        <section>
+            <h4>Tabela de registros</h4>
+            <table id="tableRegistros">
+                <thead>
+                    <tr> 
+                        <th scope="col" style="width: 12%">Data</th>
+                        <th scope="col" style="width: 43%">Descrição</th>
+                        <th scope="col" style="width: 12%">Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--VALORES DA TABELA INSERIDOS VIA JAVASCRIPT-->
+                </tbody>
+            </table>
         </section>
     </main>
     <aside>
-
+        <p>Gráfico das receitas dos últimos <span id="receitasLastMonths">12</span> meses</p>
+        <canvas id="canvasReceitas" width="550" height="200"
+            style="border:1px solid #c3c3c3;">
+            Your browser does not support the canvas element.
+        </canvas>
+    </aside>
+    <aside>
+        <p>Gráfico das despesas dos últimos <span id="despesasLastMonths">12</span> meses</p>
+        <canvas id="canvasDespesas" width="550" height="200"
+            style="border:1px solid #c3c3c3;">
+            Your browser does not support the canvas element.
+        </canvas>
     </aside>
     <footer>
             <p>&copy; Desenvolvido por <a href="https://github.com/lordonebr" target="_blank">André</a> e <a href="https://github.com/hugovinicius" target="_blank">Hugo</a><p>
