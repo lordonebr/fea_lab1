@@ -6,6 +6,8 @@ Disciplina: Front End Avançado (FEA);
 Professor: Renato Martins;  
 Curso: Desenvolvimento Web Full Stack  
 
+**Desenvolvedores**
+
 **Aluno:** André Lordone  
 **E-mail:**  
 **Git:** https://github.com/lordonebr  
@@ -14,7 +16,8 @@ Curso: Desenvolvimento Web Full Stack
 **E-mail:** hugo.desenvolvimento@outlook.com  
 **Git:** https://github.com/hugovinicius  
 
-**Font**
+**Fonte**
+
 O fonte do projeto esta disponível na pasta src.
 
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/banner_apresentacao.jpg?raw=true"/><br/>
