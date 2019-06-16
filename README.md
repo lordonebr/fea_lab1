@@ -21,5 +21,3 @@ Curso: Desenvolvimento Web Full Stack
 O fonte do projeto esta disponível na pasta src.
 
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/banner_apresentacao.jpg?raw=true"/><br/>
-
-
