@@ -1,4 +1,4 @@
-# fea_lab1
+# Front End Avançado
 
 **Laboratório 01 - HTML5 APIs**
 
@@ -6,13 +6,13 @@ Disciplina: Front End Avançado (FEA);
 Professor: Renato Martins;  
 Curso: Desenvolvimento Web Full Stack  
 
-**Aluno:** André Lordone;
-**E-mail:**;
-**Git:** https://github.com/lordonebr;
+**Aluno:** André Lordone  
+**E-mail:**  
+**Git:** https://github.com/lordonebr  
 
-**Aluno:** Hugo Vinicius;
-**E-mail:** hugo.desenvolvimento@outlook.com;
-**Git:** https://github.com/hugovinicius;
+**Aluno:** Hugo Vinicius  
+**E-mail:** hugo.desenvolvimento@outlook.com  
+**Git:** https://github.com/hugovinicius  
 
 **Font**
 O fonte do projeto esta disponível na pasta src.
