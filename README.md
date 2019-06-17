@@ -8,7 +8,7 @@ Curso: Desenvolvimento Web Full Stack
 
 **Desenvolvedores**
 
-**Aluno:** André Lordone  
+**Aluno:** André Santos  
 **E-mail:** andgas@yahoo.com.br  
 **Git:** https://github.com/lordonebr  
 
