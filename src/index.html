@@ -7,6 +7,7 @@
 
     <script src="js/index.js"></script>
     <script src="js/canvas.js"></script>
+    <script src="js/indexedDb.js"></script>
    
 </head>
 
@@ -25,20 +26,21 @@
                 <label for="valueDate">Data:</label>
                 <input type="date" id="valueDate" name="date" placeholder="Entre com a data" required>
                 <label for="valueInput">Valor:</label>
-                <input type="text" id="valueDescription" name="description" maxlength="30" placeholder="Entre com a descrição">
                 <input type="text" id="valueInput" name="value" maxlength="6" placeholder="Entre com o valor" required>
                 <label for="valueDescription">Descrição:</label>
+                <input type="text" id="valueDescription" name="description" maxlength="30" placeholder="Entre com a descrição">
                 <button type="submit" id='addSubmitBtn'>Inserir</button>
             </form>
         </section>
         <section>
             <h4>Tabela de registros</h4>
+            <button type="button" id='clearBtn'>Limpar Registros</button>
             <table id="tableRegistros">
                 <thead>
                     <tr> 
-                        <th scope="col" style="width: 12%">Data</th>
-                        <th scope="col" style="width: 43%">Descrição</th>
-                        <th scope="col" style="width: 12%">Valor (R$)</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Valor (R$)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,14 +50,14 @@
         </section>
     </main>
     <aside>
-        <p>Gráfico das receitas dos últimos <span id="receitasLastMonths">12</span> meses</p>
+        <p id="titleReceitasLastMonths"></p>
         <canvas id="canvasReceitas" width="550" height="200"
             style="border:1px solid #c3c3c3;">
             Your browser does not support the canvas element.
         </canvas>
     </aside>
     <aside>
-        <p>Gráfico das despesas dos últimos <span id="despesasLastMonths">12</span> meses</p>
+        <p id="titleDespesasLastMonths"></p>
         <canvas id="canvasDespesas" width="550" height="200"
             style="border:1px solid #c3c3c3;">
             Your browser does not support the canvas element.

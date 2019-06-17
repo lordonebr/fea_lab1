@@ -42,23 +42,32 @@ function drawColumn(element, widthCol, numCol, height, color, labelValue, labelD
 function drawGrafico(element, objGrafico, maxValue, color){
 
     var canvas = document.getElementById(element);
+    var context = canvas.getContext("2d");
 
-    let listKeys = Object.keys(objGrafico).sort();
-    let numCol = listKeys.length;;
-    let widthCol = canvas.width / numCol;
-    let valMaxGrafico = canvas.height - graphicPaddingTop;
+    // clear canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-    if(maxValue < 0)
-        maxValue = maxValue * -1;
-    
-    for(let col = 0; col < numCol; col++){
-        let dateVal = listKeys[col];
-        let value = objGrafico[dateVal];
-        if(value < 0)
-            value = value * -1;
+    // clear path
+    context.beginPath();
 
-        let setVal = (value * valMaxGrafico) / maxValue;
-            drawColumn(element, widthCol, col, setVal, color, value.toFixed(2), dateVal);
+    if(Object.keys(objGrafico).length > 0){
+        let listKeys = Object.keys(objGrafico).sort();
+        let numCol = listKeys.length;;
+        let widthCol = canvas.width / numCol;
+        let valMaxGrafico = canvas.height - graphicPaddingTop;
+
+        if(maxValue < 0)
+            maxValue = maxValue * -1;
+        
+        for(let col = 0; col < numCol; col++){
+            let dateVal = listKeys[col];
+            let value = objGrafico[dateVal];
+            if(value < 0)
+                value = value * -1;
+
+            let setVal = (value * valMaxGrafico) / maxValue;
+                drawColumn(element, widthCol, col, setVal, color, value.toFixed(2), dateVal);
+        }
     }
 }
 
@@ -92,178 +101,14 @@ function getNextDate(dateYYYYMM){
 
 }
 
-function drawGraficos(){
-
-    let example = [];
-
-    example.push({
-        "date"  : "2019/06/12",
-        "value" : 100.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/04/10",
-        "value" : 50.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/06/11",
-        "value" : 250.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/05/30",
-        "value" : -15.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/05/01",
-        "value" : -55.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/04/17",
-        "value" : -60.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/04/17",
-        "value" : 60.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/05/30",
-        "value" : -120.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/12/30",
-        "value" : 66.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2019/01/30",
-        "value" : -120.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/01/30",
-        "value" : -120.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/07/30",
-        "value" : -130.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/08/30",
-        "value" : -30.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/09/30",
-        "value" : -40.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/10/30",
-        "value" : -543.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/11/30",
-        "value" : -443.22,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/12/30",
-        "value" : -444.22,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/07/30",
-        "value" : 853.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/08/30",
-        "value" : 632.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/09/30",
-        "value" : 653.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/10/30",
-        "value" : 654.0,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/11/30",
-        "value" : 543.22,
-        "category" : "teste",
-        "description" : ""
-    });
-
-    example.push({
-        "date"  : "2018/12/30",
-        "value" : 423.22,
-        "category" : "teste",
-        "description" : ""
-    });
-
+function drawGraficos(registros){
 
     // separa as despesas/receitas por mês
     let maiorDespesa = 0;
     let maiorReceita = 0;
     let despesas = {};
     let receitas = {};
-    let sortData = example.sort((a, b) => sortValue(a.date, b.date));
+    let sortData = registros.sort((a, b) => sortValue(a.date, b.date));
     for(let i = 0; i < sortData.length; i++){
         let item = sortData[i];
         let dateItem = item.date.substring(0, 7);
@@ -340,13 +185,23 @@ function drawGraficos(){
         despesasGrafico = despesas;
     }
 
-    if(Object.keys(receitasGrafico).length > 0){
-        $("#receitasLastMonths").text(Object.keys(receitasGrafico).length);
-        drawGrafico("canvasReceitas", receitasGrafico, maiorReceita, colorReceita);
-    }
 
-    if(Object.keys(despesasGrafico).length > 0){
-        $("#despesasLastMonths").text(Object.keys(despesasGrafico).length);
-        drawGrafico("canvasDespesas", despesasGrafico, maiorDespesa, colorDespesa);
-    }
+    let titleReceita = "Gráfico das receitas";
+    if(Object.keys(receitasGrafico).length === 1)
+        titleReceita += " do último mês"
+    else
+        titleReceita += " dos últimos " + Object.keys(receitasGrafico).length.toString() + " meses";
+
+    $("#titleReceitasLastMonths").text(titleReceita);
+    drawGrafico("canvasReceitas", receitasGrafico, maiorReceita, colorReceita);
+    
+    let titleDespesa = "Gráfico das despesas";
+    if(Object.keys(despesasGrafico).length === 1)
+        titleDespesa += " do último mês"
+    else
+        titleDespesa += " dos últimos " + Object.keys(despesasGrafico).length.toString() + " meses";
+
+    $("#titleDespesasLastMonths").text(titleDespesa);
+    drawGrafico("canvasDespesas", despesasGrafico, maiorDespesa, colorDespesa);
+    
 }

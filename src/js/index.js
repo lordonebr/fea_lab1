@@ -1,5 +1,29 @@
+// preenche tabela de registros
+function fillTable(registros){
+
+    $('#tableRegistros tbody tr').remove();
+
+    if(registros != undefined){
+        var html = '';
+
+        for(let idx = 0; idx < registros.length; idx++){
+            let item = registros[idx];
+
+            var dateFormat = item.date.replace( /(\d{4})[-/](\d{2})[-/](\d{2})/, "$3/$2/$1");
+            html += '<tr>' +
+                    '<td>' + dateFormat + '</td>' +
+                    '<td>' + item.description + '</td>' + 
+                    '<td>' + parseFloat(item.value).toFixed(2) + '</td>' +
+                    '</tr>';
+        }
+
+        $('#tableRegistros tbody').append(html);
+    }
+}
+
 $(document).ready(function() {
-    drawGraficos();
+    
+    getAllRegistrosIndexedDb();
 
     $("#addSubmitBtn").click(function(event){
         
@@ -15,15 +39,30 @@ $(document).ready(function() {
                 form[field.name] = parseFloat(parseFloat(valueTemp).toFixed(2));
             }
         }
+        else if(field.name === 'date'){
+            let valueTemp = field.value.replace('-', '/').replace('-', '/');
+            form[field.name] = valueTemp;
+        }
         else
             form[field.name] = field.value;
         });
 
         if(form.date != "" && form.value != ""){
             event.preventDefault();  // não deixa recarregar a página principal, pelo redirecionamento do submit
-            // SALVAR NO INDEXEDDB
-            // SALVAR NA TABELA
+            addDataIndexedDb(form);
+
+            // recarrega registro do IndexedDB e preenche a tabela e desenha os graficos
+            getAllRegistrosIndexedDb(); 
+
+            // limpa form
+            $("#valueDate").val("");
+            $("#valueInput").val("");
+            $("#valueDescription").val("");
         }
 
     }); 
+
+    $("#clearBtn").click(function(event){
+        removeAllRegistrosIndexedDb();
+    });   
 });
