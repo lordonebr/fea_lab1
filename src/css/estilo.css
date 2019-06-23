@@ -31,6 +31,10 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+.conteudo .conteudo--espaco {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 .imagem {
   border-radius: 20px;
@@ -75,6 +79,25 @@
 
 .menu--topo {
   float: right;
+}
+
+.tabela {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.tabela thead {
+  background: #b7b9d4;
+  color: white;
+}
+.tabela th,
+.tabela td {
+  text-align: left;
+  padding: 16px;
+}
+.tabela tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 /*# sourceMappingURL=estilo.css.map */

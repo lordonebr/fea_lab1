@@ -29,7 +29,7 @@
         <img class="imagem imagem--center" src="./img/grafico_despesas_receita.jpg">
         <main>
             <section id="inserir">
-                <h4 class="conteudo__titleSecondary">Inserir novo registro
+                <h4 class="conteudo__titleSecondary conteudo--espaco">Inserir novo registro
                     <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="voltar" height="20"
                             width="20"></a>
                 </h4>
@@ -46,12 +46,12 @@
                 </form>
             </section>
             <section id="tabela">
-                <h4 class="conteudo__titleSecondary">Tabela de registros
+                <h4 class="conteudo__titleSecondary conteudo--espaco">Tabela de registros
                     <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="voltar" height="20"
                             width="20"></a>
                 </h4>
                 <button type="button" id='clearBtn'>Limpar Registros</button>
-                <table id="tableRegistros">
+                <table id="tableRegistros" class="tabela">
                     <thead>
                         <tr>
                             <th scope="col">Data</th>
@@ -67,11 +67,11 @@
         </main>
         <aside>
             <section id="graficoReceita">
-                <h4 class="conteudo__titleSecondary">Gráfico e Receita
+                <h4 class="conteudo__titleSecondary conteudo--espaco">Gráfico de Receita
                     <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="voltar" height="20"
                             width="20"></a>
                 </h4>
-                <p id="titleReceitasLastMonths"></p>
+                <p id="titleReceitasLastMonths" ></p>
                 <canvas id="canvasReceitas" width="550" height="200" style="border:1px solid #c3c3c3;">
                     Your browser does not support the canvas element.
                 </canvas>
@@ -79,7 +79,7 @@
         </aside>
         <aside>
             <section id="graficoDespesas">
-                <h4 class="conteudo__titleSecondary">Gráfico e Despesas
+                <h4 class="conteudo__titleSecondary conteudo--espaco">Gráfico de Despesas
                     <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="voltar" height="20"
                             width="20"></a>
                 </h4>

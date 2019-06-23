@@ -1,5 +1,6 @@
 $corBase: #5b5f97;
 $corBaseDark: darken($corBase, 30%);
+$corBaselighten: lighten($corBase, 30%);
 $corBaseFonte: white;
 
 * {
@@ -25,7 +26,7 @@ $corBaseFonte: white;
     cursor: pointer;
     transition: 0.3s ease;
   }
-  
+
   .conteudo__titleSecondary {
     font-size: 0.7rem;
     letter-spacing: 2px;
@@ -36,12 +37,17 @@ $corBaseFonte: white;
     cursor: pointer;
     transition: 0.3s ease;
   }
+  
+  .conteudo--espaco{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 
 .imagem {
   border-radius: 20px;
   margin: 1px 4px 0 0;
-  padding: 5px;  
+  padding: 5px;
 }
 
 .imagem--center {
@@ -83,6 +89,28 @@ $corBaseFonte: white;
   }
 }
 
-.menu--topo{
-    float: right;
+.menu--topo {
+  float: right;
+}
+
+.tabela {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+
+  thead{
+      background: $corBaselighten;
+      color: $corBaseFonte;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 16px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 }
