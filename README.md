@@ -27,5 +27,5 @@ O fonte do projeto esta disponível na pasta src.
 **Metodologia CSS**
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/bem.jpg?raw=true"/><br/>
 
-**Pré-processadora CSS**
+**Pré-processador CSS**
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/sass_logo.png?raw=true"/><br/>
