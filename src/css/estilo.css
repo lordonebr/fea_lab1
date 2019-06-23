@@ -1,16 +1,80 @@
-#main {
-  width: 97%;
+* {
+  margin: 0;
+  padding: 0;
 }
-#main p,
-#main div {
-  font-size: 2em;
+
+.conteudo {
+  margin: 0 auto;
+  width: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  text-transform: uppercase;
 }
-#main p a,
-#main div a {
-  font-weight: bold;
+.conteudo .conteudo__titlePrimary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  background: #5b5f97;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
-#main pre {
-  font-size: 3em;
+.conteudo .conteudo__titleSecondary {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  background: #5b5f97;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.imagem {
+  border-radius: 20px;
+  margin: 1px 4px 0 0;
+  padding: 5px;
+}
+
+.imagem--center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  background-color: #f1f1f1;
+  border: 1px none #ccc;
+  margin: 0 auto;
+}
+.menu a {
+  text-decoration: none;
+  color: #000;
+}
+.menu ul {
+  text-align: center;
+}
+.menu ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+.menu ul li a {
+  background-color: #3d7bb3;
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: #fff;
+}
+.menu ul li a:hover {
+  background-color: #212338;
+}
+
+.menu--topo {
+  float: right;
 }
 
 /*# sourceMappingURL=estilo.css.map */
