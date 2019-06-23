@@ -20,5 +20,12 @@ Curso: Desenvolvimento Web Full Stack
 
 O fonte do projeto esta disponível na pasta src.
 
+**API Utilizadas**
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/banner_apresentacao.jpg?raw=true"/><br/>
+<img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/banner_canvas.jpg?raw=true"/><br/>
 
+**Metodologia CSS**
+<img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/bem.jpg?raw=true"/><br/>
+
+**Pré-processadora CSS**
+<img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/sass_logo.png?raw=true"/><br/>
