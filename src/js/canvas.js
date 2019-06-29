@@ -66,7 +66,7 @@ function drawGrafico(element, objGrafico, maxValue, color){
                 value = value * -1;
 
             let setVal = (value * valMaxGrafico) / maxValue;
-                drawColumn(element, widthCol, col, setVal, color, value.toFixed(2), dateVal);
+            drawColumn(element, widthCol, col, setVal, color, value.toFixed(2), dateVal);
         }
     }
 }
@@ -193,7 +193,9 @@ function drawGraficos(registros){
         titleReceita += " dos últimos " + Object.keys(receitasGrafico).length.toString() + " meses";
 
     $("#titleReceitasLastMonths").text(titleReceita);
-    drawGrafico("canvasReceitas", receitasGrafico, maiorReceita, colorReceita);
+
+    let infoReceita = ["canvasReceitas", receitasGrafico, maiorReceita, colorReceita];
+    drawGrafico(...infoReceita);
     
     let titleDespesa = "Gráfico das despesas";
     if(Object.keys(despesasGrafico).length === 1)
@@ -202,6 +204,8 @@ function drawGraficos(registros){
         titleDespesa += " dos últimos " + Object.keys(despesasGrafico).length.toString() + " meses";
 
     $("#titleDespesasLastMonths").text(titleDespesa);
-    drawGrafico("canvasDespesas", despesasGrafico, maiorDespesa, colorDespesa);
+
+    let infoDespesa = ["canvasDespesas", despesasGrafico, maiorDespesa, colorDespesa];
+    drawGrafico(...infoDespesa);
     
 }
