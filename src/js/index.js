@@ -8,12 +8,13 @@ function fillTable(registros){
 
         for(let idx = 0; idx < registros.length; idx++){
             let item = registros[idx];
-
-            var dateFormat = item.date.replace( /(\d{4})[-/](\d{2})[-/](\d{2})/, "$3/$2/$1");
+            let {date, description, value} = item;
+            
+            var dateFormat = date.replace( /(\d{4})[-/](\d{2})[-/](\d{2})/, "$3/$2/$1");
             html += '<tr>' +
                     '<td>' + dateFormat + '</td>' +
-                    '<td>' + item.description + '</td>' + 
-                    '<td>' + parseFloat(item.value).toFixed(2) + '</td>' +
+                    '<td>' + description + '</td>' + 
+                    '<td>' + parseFloat(value).toFixed(2) + '</td>' +
                     '</tr>';
         }
 
