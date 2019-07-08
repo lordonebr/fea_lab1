@@ -2,14 +2,14 @@ const autores = [{ nome: 'André', git: 'lordonebr' }, { nome: 'Hugo Vinicius', 
 
 var rodapeDocumento = document.querySelector('.rodape ul');
 
-$(document).ready(function () {
-    for (autor of autores) {
+function LoadAutores() {
+    for (let autor of autores) {
         BuscarDadosGit(autor);
     }
-});
+}
 
 function BuscarDadosGit(autor) {
-    url = `https://api.github.com/users/${autor.git}/repos`,
+    let url = `https://api.github.com/users/${autor.git}/repos`,
         fetchData = {
             method: 'GET',
             headers: new Headers()
@@ -34,3 +34,5 @@ function CarregarDadosGit(autor, repositorio) {
    elementLI.innerHTML = htmlAutor;
    rodapeDocumento.appendChild(elementLI);
 }
+
+export { LoadAutores }

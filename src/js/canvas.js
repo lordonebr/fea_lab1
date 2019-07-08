@@ -209,3 +209,5 @@ function drawGraficos(registros){
     drawGrafico(...infoDespesa);
     
 }
+
+export { drawGraficos }

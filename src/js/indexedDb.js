@@ -1,8 +1,11 @@
+import { fillTable } from '../js/index.js'
+import { drawGraficos } from '../js/canvas.js'
+
 const constDbObject = "registros";
 
-window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+var testIndexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 var request, db;
-if(!window.indexedDB)
+if(!testIndexedDB)
 {
     console.log("Seu navegador não suporta o recurso HTML5 IndexedDB");
 }
@@ -82,3 +85,5 @@ function removeAllRegistrosIndexedDb() {
     };
 
 }
+
+export { addDataIndexedDb, getAllRegistrosIndexedDb, removeAllRegistrosIndexedDb }

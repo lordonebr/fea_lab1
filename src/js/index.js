@@ -1,3 +1,11 @@
+import '../img/fetch_api.jpg'
+import '../img/grafico_acoes.jpg'
+import '../img/grafico_despesas_receita.jpg'
+import '../img/voltar.png'
+import '../css/estilo.scss';
+import { LoadAutores } from '../js/utilizandoFetch.js'
+import { addDataIndexedDb, getAllRegistrosIndexedDb, removeAllRegistrosIndexedDb } from '../js/indexedDb.js'
+
 // preenche tabela de registros
 function fillTable(registros){
 
@@ -23,6 +31,7 @@ function fillTable(registros){
 
 $(document).ready(function() {
     
+    LoadAutores();
     getAllRegistrosIndexedDb();
 
     $("#addSubmitBtn").click(function(event){
@@ -66,3 +75,5 @@ $(document).ready(function() {
         removeAllRegistrosIndexedDb();
     });   
 });
+
+export { fillTable }
