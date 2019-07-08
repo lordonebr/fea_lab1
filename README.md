@@ -20,6 +20,12 @@ Curso: Desenvolvimento Web Full Stack
 
 O fonte do projeto esta disponível na pasta src.
 
+**Utilização**
+
+1 - Instalação de dependências: ```npm install```  
+2 - Para testar: ```npm start```  
+3 - Geração do build dos arquivos de distribuição para produção: ```npm run build```
+
 **API Utilizadas**
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/banner_apresentacao.jpg?raw=true"/><br/>
 <img src="https://github.com/lordonebr/fea_lab1/blob/master/img_git/banner_canvas.jpg?raw=true"/><br/>
