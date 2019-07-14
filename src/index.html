@@ -31,14 +31,14 @@
                             width="20"></a>
                 </h4>
                 <form class="formulario" id="formRegistro">
-                    <label for="valueDate">Data:</label>
+                    <label for="valueDate">Data:*</label>
                     <input type="date" id="valueDate" name="date" placeholder="Entre com a data" required>
-                    <label for="valueInput">Valor:</label>
-                    <input type="text" id="valueInput" name="value" maxlength="6" placeholder="Entre com o valor"
+                    <label for="valueInput">Valor:*</label>
+                    <input type="text" id="valueInput" name="value" maxlength="6" placeholder="Entre com o valor em reais"
                         required>
                     <label for="valueDescription">Descrição:</label>
                     <input class="inputLarge" type="text" id="valueDescription" name="description" maxlength="60"
-                        placeholder="Entre com a descrição">
+                        placeholder="Entre com a descrição (opcional)">
                     <button type="submit" id='addSubmitBtn' class="btn btn--sucesso">Inserir</button>
                 </form>
             </section>
@@ -62,25 +62,25 @@
                 </table>
             </section>
         </main>
-        <aside>
-            <section id="graficoReceita" role="contentinfo" aria-label="Grafico de receitas">
-                <h4 class="conteudo__titleSecondary conteudo--espaco">Gráfico de Receita
-                    <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="Voltar topo do site" height="20"
-                            width="20"></a>
-                </h4>
-                <p id="titleReceitasLastMonths"></p>
+        <aside role="contentinfo" aria-label="Grafico de receitas">
+            <h4 class="conteudo__titleSecondary conteudo--espaco">Gráfico de Receita
+                <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="Voltar topo do site" height="20"
+                        width="20"></a>
+            </h4>
+            <section id="graficoReceita">
+                <h5 id="titleReceitasLastMonths"></h5>
                 <canvas id="canvasReceitas" width="550" height="200" style="border:1px solid #c3c3c3;">
                     Gráfico das receitas lançadas.
                 </canvas>
             </section>
         </aside>
-        <aside>
-            <section id="graficoDespesas" role="contentinfo" aria-label="Grafico de despesas">
-                <h4 class="conteudo__titleSecondary conteudo--espaco">Gráfico de Despesas
-                    <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="Voltar topo do site" height="20"
-                            width="20"></a>
-                </h4>
-                <p id="titleDespesasLastMonths"></p>
+        <aside role="contentinfo" aria-label="Grafico de despesas">
+            <h4 class="conteudo__titleSecondary conteudo--espaco">Gráfico de Despesas
+                <a class="menu--topo" href="#topo"><img src="img/voltar.png" alt="Voltar topo do site" height="20"
+                        width="20"></a>
+            </h4>
+            <section id="graficoDespesas">
+                <h5 id="titleDespesasLastMonths"></h5>
                 <canvas id="canvasDespesas" width="550" height="200" style="border:1px solid #c3c3c3;">
                     Gráfico das despesas lançadas.
                 </canvas>

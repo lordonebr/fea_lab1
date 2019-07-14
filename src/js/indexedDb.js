@@ -3,27 +3,36 @@ import { drawGraficos } from '../js/canvas.js'
 
 const constDbObject = "registros";
 
-var testIndexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-var request, db;
-if(!testIndexedDB)
-{
-    console.log("Seu navegador não suporta o recurso HTML5 IndexedDB");
-}
-else
-{
-    request = window.indexedDB.open("Teste", 3);
-    request.onerror = function(event){
-        console.log("Erro ao abrir o banco de dados", event);
-    }
+var db;
 
-    request.onupgradeneeded = function(event){
-        console.log("Atualizando");
-        db = event.target.result;
-        var objectStore = db.createObjectStore(constDbObject, { autoIncrement : true });
-    };
-    request.onsuccess = function(event){
-        console.log("Banco de dados aberto com sucesso");
-        db = event.target.result;
+function initIndexedDb(){
+    var testIndexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+    
+    if(!testIndexedDB)
+    {
+        console.log("Seu navegador não suporta o recurso HTML5 IndexedDB");
+    }
+    else
+    {
+        return new Promise(function(resolve, reject) {
+            var request = window.indexedDB.open("Teste", 3);
+            request.onerror = function(event){
+                console.log("Erro ao abrir o banco de dados", event);
+                reject("Erro ao abrir o banco de dados");
+            }
+
+            request.onupgradeneeded = function(event){
+                console.log("Atualizando");
+                db = event.target.result;
+                var objectStore = db.createObjectStore(constDbObject, { autoIncrement : true });
+                resolve("Atualizando");
+            };
+            request.onsuccess = function(event){
+                console.log("Banco de dados aberto com sucesso");
+                db = event.target.result;
+                resolve("Banco de dados aberto com sucesso");
+            }
+        });
     }
 }
 
@@ -50,6 +59,7 @@ var registros = undefined;
 function getAllRegistrosIndexedDb(){
 
     registros = [];
+
     var request = db.transaction(constDbObject).objectStore(constDbObject);
     request.openCursor().onsuccess = function(event) {
 
@@ -86,4 +96,4 @@ function removeAllRegistrosIndexedDb() {
 
 }
 
-export { addDataIndexedDb, getAllRegistrosIndexedDb, removeAllRegistrosIndexedDb }
+export { initIndexedDb, addDataIndexedDb, getAllRegistrosIndexedDb, removeAllRegistrosIndexedDb }
