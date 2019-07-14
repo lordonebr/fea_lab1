@@ -29,7 +29,7 @@ function BuscarDadosGit(autor) {
 
 function CarregarDadosGit(autor, repositorio) {
    let elementLI = document.createElement('li'),
-       htmlAutor = `<a href="https://github.com/${autor.git}" target="_blank"><img alt="Foto da capa do Github do Autor" width="260" height="260" class="" src=" ${repositorio.owner.avatar_url}"><br>${autor.nome}</a>`;
+       htmlAutor = `<a href="https://github.com/${autor.git}" target="_blank"><img alt="Foto da capa do Github do Autor" width="260" height="260" class="" src=" ${repositorio.owner.avatar_url}"><br>${autor.nome} (Link Github)</a>`;
 
    elementLI.innerHTML = htmlAutor;
    rodapeDocumento.appendChild(elementLI);
